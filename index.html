@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+            function massive(){
+            var formValue = document.forms["frm"].elements["N"].value;
+            var arr = formValue.split(' ');
+            var pos = 0;
+            var neg = 0;
+            var nul = 0;
+            for (var num of arr){
+            if(+num > 0){
+                pos++;
+            }else if(+num < 0){
+                neg++;
+            }else{
+                nul++;  
+            }
+        }
+        document.writeln(pos);
+        document.writeln(neg);
+        document.writeln(nul);
+        }
+            
+        </script>
+    </head>
+    <body>
+        <form id="frm">
+            <input type="text" placeholder="Введите числа" id="N">
+            <input type="button" onclick="massive()" value="отправить">
+        </form>
+    </body>
+</html>

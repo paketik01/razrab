@@ -1,27 +1,33 @@
 <html>
-    <head>
-        <script>
-            function result(){
-            var sum = 0;
-            var P = Number(document.forms["frm"].elements["P"].value);
-            var x = Number(document.forms["frm"].elements["x"].value);
-            if(Math.abs(x)<=1){
-                for (var n = 0; n <= P; n++){
-                    sum = sum + (-1)**n*(x**(2*n+1))/(2*n+1);
-                }
-                document.writeln(sum);
-            }else{
-                document.writeln("Второе число не подходит");
-            }
-            }
-            
-        </script>
-    </head>
-    <body>
-        <form id="frm">
-            <input type="text" placeholder="Введите первое число" id="P">
-            <input type="text" placeholder="Введите второе число" id="x">
-            <input type="button" onclick="result()" value="отправить">
-        </form>
-    </body>
+<head>
+    <script>
+     class Peremen{
+     x = 0;
+     y = 0;
+     constructor(x,y){
+        this.x = x;
+        this.y = y;
+     }
+     Addition(){
+        return this.x + this.y;
+     }
+     Subtraction(){
+        return this.x - this.y;
+     }
+     Multiplication(){
+        return this.x * this.y;
+     }
+     Division(){
+        return this.x / this.y;
+     }
+     }
+     var arr = [new Peremen(5,9), new Peremen(6,6), new Peremen(7,2)];
+     for (elem of arr){
+        document.writeln(arr.indexOf(elem) + " объект<br>");
+        document.writeln("Сложение: " + elem.Addition() + "<br>");
+        document.writeln("Вычитание: " + elem.Subtraction() + "<br>");
+        document.writeln("Умножение: " + elem.Multiplication() + "<br>");
+        document.writeln("Деление: " + elem.Division() + "<br> <br>");
+     }
+    </script>
 </html>

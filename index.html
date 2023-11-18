@@ -1,27 +1,39 @@
 <html>
-    <head>
-        <script>
-            function result(){
-            var sum = 0;
-            var P = Number(document.forms["frm"].elements["P"].value);
-            var x = Number(document.forms["frm"].elements["x"].value);
-            if(Math.abs(x)<=1){
-                for (var n = 0; n <= P; n++){
-                    sum = sum + (-1)**n*(x**(2*n+1))/(2*n+1);
+<head>
+    <script>
+        function createObject(propName1,propValue1,propName2,propValue2){
+            return{
+                [propName1]:propValue1,
+                [propName2]:propValue2,
+                
+                print(){
+                    return `${propName1}: ${propValue1}, ${propName2}: ${propValue2}`;
                 }
-                document.writeln(sum);
-            }else{
-                document.writeln("Второе число не подходит");
             }
-            }
-            
-        </script>
-    </head>
-    <body>
-        <form id="frm">
-            <input type="text" placeholder="Введите первое число" id="P">
-            <input type="text" placeholder="Введите второе число" id="x">
-            <input type="button" onclick="result()" value="отправить">
-        </form>
-    </body>
+        }
+        var Person = [
+          new  createObject("Имя","Лиза","Возраст",20),
+          new  createObject("Имя","Света","Возраст",18),
+          new  createObject("Имя","Алёна","Возраст",7)
+    ];
+    var Car = [
+    new  createObject("Марка","TOYOTA Camry","Дата выпуска",1982),
+    new  createObject("Марка","BMW x5","Дата выпуска",1999),
+    new  createObject("Марка","LADA Vesta","Дата выпуска",2015),
+    ];
+    var Book= [
+    new  createObject("Название","Преступление и наказание","Дата публикации",1866),
+    new  createObject("Название","Маленькие женщины","Дата публикации",1868),
+    new  createObject("Название","Цветы для Элджернона","Дата публикации",1966)
+    ];
+    for(var i=0; i<Person.length;i++){
+        document.writeln(Person[i].print()+"<br>");
+    }
+    for(var i=0; i<Car.length;i++){
+        document.writeln(Car[i].print()+"<br>");
+    }
+    for(var i=0; i<Book.length;i++){
+        document.writeln(Book[i].print()+"<br>");
+    }
+    </script>
 </html>

@@ -1,27 +1,47 @@
 <html>
-    <head>
-        <script>
-            function result(){
-            var sum = 0;
-            var P = Number(document.forms["frm"].elements["P"].value);
-            var x = Number(document.forms["frm"].elements["x"].value);
-            if(Math.abs(x)<=1){
-                for (var n = 0; n <= P; n++){
-                    sum = sum + (-1)**n*(x**(2*n+1))/(2*n+1);
-                }
-                document.writeln(sum);
-            }else{
-                document.writeln("Второе число не подходит");
+    <head> 
+        <script>        
+            function backgr(){
+                var colorBack = document.getElementById("backcolor").value;
+                var root = document.documentElement;
+                root.style.backgroundColor = colorBack;
             }
+            function textColor(){
+                var colortext = document.getElementById("textcolor").value;
+                var root = document.body;
+                root.style.color = colortext;
             }
-            
+            function mylinks(){
+                var newlink = document.querySelector('a.link');
+                var link = document.getElementById('yourlink').value;
+                newlink.setAttribute('href', link);
+            }
         </script>
+        <style>
+            .class{
+                background-color: white;
+            }
+            a{
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+        </style>
+        <body>
+                <input type="text" placeholder="Введите цвет фона" id="backcolor">
+                <input type="button" onclick="backgr()" value="Ок">
+                <br><br>
+                <input type="text" placeholder="Введите цвет текста" id="textcolor">
+                <input type="button" onclick="textColor()" value="Ок">
+                <br><br>
+                <input type="text" placeholder="Введите ссылку" id="yourlink">
+                <input type="button" onclick="mylinks()" value="Ок">
+                <br><br>
+            <a href=" " class="link">Ссылка на ресурс</a>
+            <p  class="p">С наступающим новым годом!</p>
+    
+        </body>
+    
     </head>
-    <body>
-        <form id="frm">
-            <input type="text" placeholder="Введите первое число" id="P">
-            <input type="text" placeholder="Введите второе число" id="x">
-            <input type="button" onclick="result()" value="отправить">
-        </form>
-    </body>
-</html>
+    </html>

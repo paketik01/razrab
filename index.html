@@ -2,9 +2,9 @@
     <head> 
         <script>        
             function backgr(){
-                var colorBack = document.getElementById("backcolor").value;
+                var colorBackgr = document.getElementById("backgrcolor").value;
                 var root = document.documentElement;
-                root.style.backgroundColor = colorBack;
+                root.style.backgroundColor = colorBackgr;
             }
             function textColor(){
                 var colortext = document.getElementById("textcolor").value;
@@ -29,7 +29,7 @@
             }
         </style>
         <body>
-                <input type="text" placeholder="Введите цвет фона" id="backcolor">
+                <input type="text" placeholder="Введите цвет фона" id="backgrcolor">
                 <input type="button" onclick="backgr()" value="Ок">
                 <br><br>
                 <input type="text" placeholder="Введите цвет текста" id="textcolor">

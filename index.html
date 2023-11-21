@@ -1,27 +1,55 @@
 <html>
-    <head>
-        <script>
-            function result(){
-            var sum = 0;
-            var P = Number(document.forms["frm"].elements["P"].value);
-            var x = Number(document.forms["frm"].elements["x"].value);
-            if(Math.abs(x)<=1){
-                for (var n = 0; n <= P; n++){
-                    sum = sum + (-1)**n*(x**(2*n+1))/(2*n+1);
-                }
-                document.writeln(sum);
-            }else{
-                document.writeln("Второе число не подходит");
-            }
-            }
-            
-        </script>
-    </head>
+<head> 
+    <script>    
+       function fontSize18(){
+            var root = document.body;
+            root.style.fontSize = "18pt";
+        }
+        function fontSize22(){
+            var root = document.body;
+            root.style.fontSize = "22pt";
+        }
+        function fontSize24(){
+            var root = document.body;
+            root.style.fontSize = "24pt";
+        }   
+        function BlackAndWhite(){
+            var root = document.documentElement;
+            root.style.backgroundColor = "black";
+            var root1 = document.body;
+            root1.style.color = "white";
+        }
+         function WhiteAndBlack(){
+            var root = document.documentElement;
+            root.style.backgroundColor = "white";
+            var root1 = document.body;
+            root1.style.color = "black";
+        }
+        function CyanAndBlack(){
+            var root = document.documentElement;
+            root.style.backgroundColor = "cyan";
+            var root1 = document.body;
+            root1.style.color = "black";
+        }
+        function imageOn(){
+            var root = document.querySelector('img.image');
+            root.style.display = "block";
+        }
+        function imageOff(){
+            var root = document.querySelector('img.image');
+            root.style.display = "none";
+        }
+    </script>
     <body>
-        <form id="frm">
-            <input type="text" placeholder="Введите первое число" id="P">
-            <input type="text" placeholder="Введите второе число" id="x">
-            <input type="button" onclick="result()" value="отправить">
-        </form>
+            <input type="button" onclick="fontSize18()" value="18"> <input type="button" onclick="fontSize22()" value="22"> <input type="button" onclick="fontSize24()" value="24">
+            <br><br>
+            <input type="button" onclick="CyanAndBlack()" value="Голубо-чёрный"> <input type="button" onclick="BlackAndWhite()" value="Чёрно-белый"> <input type="button" onclick="WhiteAndBlack()" value="Бело-чёрный"> 
+            <br><br>
+            <input type="button" onclick="imageOn()" value="вкл"> <input type="button" onclick="imageOff()" value="выкл">
+            <br><br>
+        <img class ="image" src = "dog.jpg">
+        <p  class="text">Удивительный рассказ «Лев и собачка» Л.Н. Толстого не оставит равнодушным ни одного ребёнка. История наглядно показывает детям, что такое настоящая привязанность и преданность.</p>
     </body>
+
+</head>
 </html>
